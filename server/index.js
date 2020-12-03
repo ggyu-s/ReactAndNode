@@ -15,7 +15,9 @@ app.use(cookieParser());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
+app.get("/api/hello", (req, res) => {
+  res.send("hello world");
+});
 mongoose
   .connect(config.mongoURI, {
     useNewUrlParser: true,
